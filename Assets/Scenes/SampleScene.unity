@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4919319124548610, guid: 19ff95008e530d84db3aa7d29983b724, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.33
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4919319124548610, guid: 19ff95008e530d84db3aa7d29983b724, type: 3}
       propertyPath: m_LocalPosition.y
@@ -652,6 +652,11 @@ MonoBehaviour:
   front_right: {fileID: 1309380797}
   back_left: {fileID: 2068733277}
   back_right: {fileID: 1299053440}
+  Torque: 0
+  Speed: 0
+  MaxSpeed: 200
+  Brake: 10000
+  CoefAcceleration: 10
 --- !u!1 &1106200286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1489528763446052, guid: 19ff95008e530d84db3aa7d29983b724, type: 3}
