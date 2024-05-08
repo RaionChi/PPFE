@@ -21,7 +21,7 @@ public class Car_controller : MonoBehaviour
 
     void Start()
     {
-        
+        //GetComponent<Rigidbody>().centerOfMass = new Vector3( 0f,0f, 0f);
     }
 
     // Update is called once per frame
