@@ -18,10 +18,14 @@ public class Car_controller : MonoBehaviour
     public float CoefAcceleration = 10f;
     public float WhellAngleMAx = 10f;
 
+   
+
 
     void Start()
     {
-        //GetComponent<Rigidbody>().centerOfMass = new Vector3( 0f,0f, 0f);
+       
+        //GetComponent<Rigidbody>().centerOfMass = new Vector3( 0f,-0.1f, 0f);
+        
     }
 
     // Update is called once per frame
@@ -55,4 +59,5 @@ public class Car_controller : MonoBehaviour
         front_left.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
         front_right.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
     }
+
 }
