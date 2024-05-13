@@ -17,6 +17,8 @@ public class Car_controller : MonoBehaviour
     public int Brake = 10000;
     public float CoefAcceleration = 10f;
     public float WhellAngleMAx = 10f;
+    public bool Freinage = false;
+    public GameObject Backlight;
 
    
 
@@ -39,15 +41,21 @@ public class Car_controller : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                back_left.brakeTorque = 0;
-                back_right.brakeTorque = 0;
-                back_left.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
-                back_right.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
+                if (!Freinage)
+                {
+                    front_left.brakeTorque = 0;
+                    front_right.brakeTorque = 0;
+                    back_left.brakeTorque = 0;
+                    back_right.brakeTorque = 0;
+                    back_left.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
+                    back_right.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
+                }
             }
+               
         }
         
         //Déceleration
-        if (!Input.GetKey(KeyCode.UpArrow) )
+        if (!Input.GetKey(KeyCode.UpArrow) && !Freinage || Speed>MaxSpeed)
         {
             back_left.motorTorque = 0;
             back_right.motorTorque = 0;
@@ -58,6 +66,39 @@ public class Car_controller : MonoBehaviour
         //direction du vehicule
         front_left.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
         front_right.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
+
+        //Freinage
+
+        if(Input.GetKey(KeyCode.Space)) 
+        {
+            Freinage = true;
+            Backlight.SetActive(true);
+            back_left.brakeTorque = Mathf.Infinity;
+            back_right.brakeTorque = Mathf.Infinity;
+            front_left.brakeTorque = Mathf.Infinity;
+            front_right.brakeTorque = Mathf.Infinity;
+            back_left.motorTorque = 0;
+            back_right.motorTorque = 0;
+           
+            
+
+        }
+        else
+        {
+            Freinage = false;
+            Backlight.SetActive(false);    
+        }
+
+        //Marche arrière
+        if (Input.GetKey(KeyCode.DownArrow)) 
+        {
+            front_left.brakeTorque = 0;
+            front_right.brakeTorque = 0;
+            back_left.brakeTorque = 0;
+            back_right.brakeTorque = 0;
+            back_left.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
+            back_right.motorTorque = Input.GetAxis("Vertical") * Torque * CoefAcceleration * Time.deltaTime;
+        }
     }
 
 }
