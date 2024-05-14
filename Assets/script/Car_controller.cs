@@ -17,6 +17,7 @@ public class Car_controller : MonoBehaviour
     public int Brake = 10000;
     public float CoefAcceleration = 10f;
     public float WhellAngleMAx = 10f;
+    public float DAmax = 40f;
     public bool Freinage = false;
     public GameObject Backlight;
 
@@ -64,8 +65,11 @@ public class Car_controller : MonoBehaviour
         }
 
         //direction du vehicule
-        front_left.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
-        front_right.steerAngle = Input.GetAxis("Horizontal") * WhellAngleMAx;
+
+        float DA = (((WhellAngleMAx - DAmax)/MaxSpeed)* Speed) + DAmax;
+        Debug.Log(DA);
+        front_left.steerAngle = Input.GetAxis("Horizontal") * DA;
+        front_right.steerAngle = Input.GetAxis("Horizontal") * DA;
 
         //Freinage
 
