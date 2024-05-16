@@ -21,15 +21,7 @@ public class Car_controller : MonoBehaviour
     public bool Freinage = false;
     public GameObject Backlight;
 
-    
-
-
-    void Start()
-    {
-       
-        //GetComponent<Rigidbody>().centerOfMass = new Vector3( 0f,-0.1f, 0f);
-        
-    }
+   
 
     // Update is called once per frame
     void Update()

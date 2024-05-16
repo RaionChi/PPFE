@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 236081902}
   - component: {fileID: 236081906}
   - component: {fileID: 236081907}
+  - component: {fileID: 236081908}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -236,12 +237,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236081901}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 522260645f8ce7e4b8a64f44b885a199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentTimeText: {fileID: 862568142}
+  chronoData: {fileID: 11400000, guid: 955bcc8fefce20048abe7b3c289fd4a2, type: 2}
 --- !u!114 &236081907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +257,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NomDeScene: Menu
+--- !u!114 &236081908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236081901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed43fbf189cc99446858dbff9dce27dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronoData: {fileID: 11400000, guid: 955bcc8fefce20048abe7b3c289fd4a2, type: 2}
+  currentTimeText: {fileID: 862568142}
 --- !u!1 &586753909
 GameObject:
   m_ObjectHideFlags: 0
