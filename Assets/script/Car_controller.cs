@@ -21,7 +21,7 @@ public class Car_controller : MonoBehaviour
     public bool Freinage = false;
     public GameObject Backlight;
 
-   
+    
 
 
     void Start()
@@ -42,6 +42,7 @@ public class Car_controller : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
+
                 if (!Freinage)
                 {
                     front_left.brakeTorque = 0;
@@ -67,7 +68,6 @@ public class Car_controller : MonoBehaviour
         //direction du vehicule
 
         float DA = (((WhellAngleMAx - DAmax)/MaxSpeed)* Speed) + DAmax;
-        Debug.Log(DA);
         front_left.steerAngle = Input.GetAxis("Horizontal") * DA;
         front_right.steerAngle = Input.GetAxis("Horizontal") * DA;
 
