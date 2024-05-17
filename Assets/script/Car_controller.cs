@@ -26,6 +26,10 @@ public class Car_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Son du moteur
+        GetComponent<AudioSource>().pitch = Speed / MaxSpeed + 0.2f;
+
         Speed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f;
         textSpeed.text = "Speed : " + (int) Speed ;
 
